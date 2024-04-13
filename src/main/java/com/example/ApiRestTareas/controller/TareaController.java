@@ -71,12 +71,12 @@ public class TareaController {
         Map<String, Object> map = new HashMap<String, Object>();
         try {
 
-            Tarea currentPerson = tareaService.buscarId(id);
+            Tarea currentTarea = tareaService.buscarId(id);
 
-            currentPerson.setDescripcion(tarea.getDescripcion());
-            currentPerson.setEstado(tarea.getEstado());
+            currentTarea.setDescripcion(tarea.getDescripcion());
+            currentTarea.setEstado(tarea.getEstado());
 
-            Tarea res = tareaService.guardar(tarea);
+            Tarea res = tareaService.guardar(currentTarea);
 
             return new ResponseEntity<Object>(res, HttpStatus.OK);
         } catch (Exception e) {
